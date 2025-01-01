@@ -42,7 +42,7 @@ for row in range(10):
             prevent_initial_call=True
         )
         def toggle_color(n_clicks, cell_id=cell_id):
-            color = 'white' if n_clicks and n_clicks % 2 else 'black'
+            color = 'blue' if n_clicks and n_clicks % 2 else 'black'
             return {
                 'width': '40px',
                 'height': '40px',
