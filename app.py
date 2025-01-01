@@ -10,13 +10,15 @@ df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapmi
 app = Dash()
 
 # App layout
-app.layout = [
+app.layout = html.Div(  # Wrap the layout inside a Div
+    children=[
     html.Div(children='My First App with Data, Graph, and Controls'),
     html.Hr(),
     dcc.RadioItems(options=['pop', 'lifeExp', 'gdpPercap'], value='lifeExp', id='controls-and-radio-item'),
     dash_table.DataTable(data=df.to_dict('records'), page_size=6),
     dcc.Graph(figure={}, id='controls-and-graph')
 ]
+)
 
 # Add controls to build the interaction
 @callback(
